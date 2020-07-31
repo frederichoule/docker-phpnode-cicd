@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# Update packages, set frontend to "noninteractive" so we don't get any questions
+# Update packages
 apt-get update -qy
 
 # Install required softwares and repos
@@ -21,6 +21,7 @@ echo "extension=grpc.so" > /etc/php/$PHP_VERSION/cli/conf.d/25-grpc.ini
 
 # Create the .ssh directory
 mkdir -p ~/.ssh
+chmod 700 ~/.ssh
 
 # Install NVM
-curl --silent -o- https://raw.githubusercontent.com/creationix/nvm/master/install.sh | bash
+curl --silent -o- https://raw.githubusercontent.com/nvm-sh/nvm/master/install.sh | bash
